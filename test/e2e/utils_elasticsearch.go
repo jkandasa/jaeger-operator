@@ -55,7 +55,7 @@ func ExecuteEsRequest(esNamespace, httpMethod, api string) ([]byte, error) {
 	logrus.Infof("creating esport forward, namespace:%s", esNamespace)
 	// enable port forward
 	fwdPortES, closeChanES, esPort := CreateEsPortForward(esNamespace)
-	logrus.Infof("created esport forward, namespace:%s, local port:%d", esNamespace, esPort)
+	logrus.Infof("created esport forward, namespace:%s, local port:%s", esNamespace, esPort)
 
 	defer func() {
 		logrus.Infof("about to close esport forward, namespace:%s", esNamespace)
