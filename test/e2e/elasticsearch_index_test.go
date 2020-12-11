@@ -247,6 +247,8 @@ func (suite *ElasticSearchIndexTestSuite) triggerIndexCleanerAndVerifyIndices(ja
 		// update and trigger index cleaner job
 		suite.turnOnEsIndexCleaner(jaegerInstance, verifyDays)
 
+		logrus.Info("index cleaner job done")
+
 		// get services and spans indices
 		servicesIndices, spanIndices := suite.getIndices()
 		// set valid index start date
